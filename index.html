@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Triatlon</title>
+    <link href="assets/css/bootstrap-5.3/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <main class="container flex g-4 p-4"  style="zoom: 70%;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-running me-2"></i>
+                    Triatlón de la Cava
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#disciplinas">Disciplinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#registro">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#caminata">Resultados</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="container">
+                <h1 class="animate-fade-in">Triatlón de la Cava</h1>
+                <p class="lead animate-fade-in">Únete a la competencia más emocionante del año</p>
+                <a href="#registro" class="btn btn-primary btn-lg mt-3 animate-fade-in">
+                    <i class="fas fa-user-plus"></i>
+                    Registrarse
+                </a>
+            </div>
+        </section>
+
+
+
+        <!-- Disciplines Section -->
+        <section class="py-5" id="disciplinas">
+            <div class="container">
+                <h2 class="text-center mb-5">Nuestras Disciplinas</h2>
+                <div class="row g-4">
+                    <!-- Walking Card -->
+                    <div class="col-md-4">
+                        <div class="card discipline-card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-walking discipline-icon"></i>
+                                <h3>Caminata</h3>
+                                <p>10K de recorrido</p>
+                                <p><small>Velocidad promedio: 7 K/H</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swimming Card -->
+                    <div class="col-md-4">
+                        <div class="card discipline-card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-swimmer discipline-icon"></i>
+                                <h3>Natación</h3>
+                                <p>10K de recorrido</p>
+                                <p><small>Velocidad promedio: 6,192 K/H</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cycling Card -->
+                    <div class="col-md-4">
+                        <div class="card discipline-card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-bicycle discipline-icon"></i>
+                                <h3>Ciclismo</h3>
+                                <p>30K de recorrido</p>
+                                <p><small>Velocidad promedio: 45 K/H</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section class="py-5" id="registro">
+            <div class="container">
+                <div class="registration-form">
+                    <h2 class="text-center mb-4">Registro de Participantes</h2>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Cédula</label>
+                                <input type="text" class="form-control" required placeholder="Ingrese su cédula" id = "cedula">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" required placeholder="Ingrese su nombre completo" id = "nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Municipio</label>
+                                <input type="text" class="form-control" required placeholder="Ingrese su municipio" id = "municipio">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Edad</label>
+                                <input type="number" class="form-control" required placeholder="Ingrese su edad" id="edad">
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type ="button" class="btn btn-primary" id = "btnRegistrar" onclick="registrarPartipante">
+                                    <i class="fas fa-save me-2"></i>
+                                    Registrar Participante
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Confirmación de Asistencia -->
+        <section class="py-5" id="participantes">
+            <div class="container">
+                <div class="registration-form">
+                    <h2 class="text-center mb-4">
+                        <i class="bi bi-people-fill me-2"></i>
+                        Confirmación de Participantes
+                    </h2>
+
+                    <!-- Botones de control -->
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <button type="button" class="btn btn-primary rounded-pill px-4" id="generarDatos" onclick="generarDatosAleatorios">
+                            <i class="bi bi-person-plus-fill me-2"></i>
+                            Generar Participantes
+                        </button>
+                        <button type="button" class="btn btn-danger rounded-pill px-4" id="eliminarSeleccionados" onclick="eliminarSeleccionados">
+                            <i class="bi bi-person-x-fill me-2"></i>
+                            Eliminar Seleccionados
+                        </button>
+                    </div>
+
+                    <!-- Tabla de participantes -->
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="selectAll">
+                                        </div>
+                                    </th>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Edad</th>
+                                    <th>Municipio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="participantesTableBody">
+                                <!-- Los participantes se generarán dinámicamente aquí -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <h1 id="tiempo" class="text-center mb-4">00:00:00</h1>
+        <button class="btn btn-primary me-2" id="button_iniciar_triatlon" onclick="iniciar_triatlon()">Iniciar
+            Triatlon</button>
+        <button class="btn btn-secondary me-2" id="button_reiniciar_triatlon" onclick="iniciar_triatlon()"
+            disabled>Reiniciar
+            Triatlon</button>
+        <button class="btn btn-warning me-2" id="button_detener_o_reanudar_triatlon" onclick="detener_reanudar_triatlon()"
+            disabled>Detener</button>
+
+        <button class="btn btn-danger me-2" id="btnCancelar" onclick="cancelarCronometro()">
+            Cancelar
+        </button>
+
+
+        <div id="caminata" class="mt-4 glass-card"></div>
+        <div id="natación" class="mt-4 glass-card"></div>
+        <div id="ciclismo" class="mt-4 glass-card"></div>
+    </main>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="assets/js/lógica/script.js"></script>
+    <script src="assets/js/bootstrap-5.3/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+<!-- wsdhfh -->
